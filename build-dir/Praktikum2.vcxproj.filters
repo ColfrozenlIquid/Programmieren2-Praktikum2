@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\AbstractUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\DungeonCrawler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Floor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\KeyboardInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Portal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\TerminalUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Wall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\AbstractUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Character.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\DungeonCrawler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Floor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\InputType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\KeyboardInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Portal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\TerminalUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\Wall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Daniel\Desktop\Programmieren2\Praktikum2\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{3EA3C709-888D-3890-A84A-E2CEBBD38A5D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2098BB93-D584-3309-A5DD-815DF2D99DB9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
