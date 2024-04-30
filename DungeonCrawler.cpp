@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #include "DungeonCrawler.h"
 #include "TerminalUI.h"
 
@@ -22,22 +18,8 @@ bool DungeonCrawler::turn() {
         }
         Tile* current_character_tile = character->getCurrentCharacterTile();
         Tile* destination_character_tile = getDestinationTile(player_input, current_character_tile);
-
-
-        // Coordinate current_character_position = character->getCurrentCoordinate();
-        // Tile* current_character_tile = character->getCurrentCharacterTile();
-        // std::pair<Tile*, Coordinate> destination_tile = getDestinationTile(player_input, current_character_position);
-        bool result = current_character_tile->moveTo(destination_character_tile, character);
-        // std::cout << "Result is: " << result << std::endl;
-        // if (result) {
-        //     std::cout << "Moving player" << std::endl;
-        //     character->setCurrentTile(destination_character_tile);
-        //     character->setPositionCoordinate(destination_tile.second.row_pos, destination_tile.second.column_pos);
-        // }
+        current_character_tile->moveTo(destination_character_tile, character);
     }
-    // KeyboardInput::getKeyboardInput();
-    // INPUT player_input = m_UI->move();
-    // m_level.
     return true;
 }
 
@@ -46,8 +28,6 @@ Tile* DungeonCrawler::getDestinationTile(INPUT player_input, Tile* current_tile)
     int current_column = current_tile->getColumn();
     int destination_row = current_row;
     int destination_column = current_column;
-
-    std::cout << "current coord (" << current_column << ", " << current_row << ")" << std::endl;
 
     switch (player_input) {
         case INPUT::UP :
@@ -76,6 +56,6 @@ Tile* DungeonCrawler::getDestinationTile(INPUT player_input, Tile* current_tile)
         default:
             break;
     }
-    std::cout << "Destination coord (" << destination_column << ", " << destination_row << ")" << std::endl;
+
     return m_level->getTile(destination_row, destination_column);
 }

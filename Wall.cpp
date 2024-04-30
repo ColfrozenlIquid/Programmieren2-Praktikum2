@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #include "Wall.h"
 #include <iostream>
 
@@ -17,17 +13,6 @@ std::string Wall::getTexture() {
     }
     return m_texture;
 }
-
-// bool Wall::moveTo(Tile* destTile, Character* who) {
-//     std::cout << "Caling moveto on Wall" << std::endl;
-//     if (onLeave(destTile, who)) {
-//         if (destTile->onEnter(who).first) {
-//             destTile->setCurrentCharacter(who);
-//             this->setCurrentCharacter(nullptr);
-//         }
-//     }
-//     return true;
-// }
 
 bool Wall::onLeave(Tile* destTile, Character* who) {
     return true;

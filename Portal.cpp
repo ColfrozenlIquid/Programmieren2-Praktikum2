@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #include "Portal.h"
 
 Portal::Portal(int row, int column) : Tile(row, column) {
@@ -16,16 +12,6 @@ std::string Portal::getTexture() {
     }
     return m_texture;
 }
-
-// bool Portal::moveTo(Tile* destTile, Character* who) {
-//     if (onLeave(destTile, who)) {
-//         if (destTile->onEnter(who).first) {
-//             this->m_destination_portal->setCurrentCharacter(who);
-//             this->setCurrentCharacter(nullptr);
-//         }
-//     }
-//     return true;
-// }
 
 bool Portal::onLeave(Tile* destTile, Character* who) {
     return true;

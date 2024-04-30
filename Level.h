@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #ifndef PRAKTIKUM2_LEVEL_H
 #define PRAKTIKUM2_LEVEL_H
 
@@ -39,6 +35,5 @@ class Level {
         const int m_rows;
         const int m_columns;
 };
-
 
 #endif //PRAKTIKUM2_LEVEL_H

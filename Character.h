@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #ifndef PRAKTIKUM2_CHARACTER_H
 #define PRAKTIKUM2_CHARACTER_H
 

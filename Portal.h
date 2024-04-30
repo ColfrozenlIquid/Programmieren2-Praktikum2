@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #ifndef PRAKTIKUM2_PORTAL_H
 #define PRAKTIKUM2_PORTAL_H
 
@@ -24,6 +20,5 @@ class Portal : public Tile {
     private:
         Portal* m_destination_portal;
 };
-
 
 #endif //PRAKTIKUM2_PORTAL_H

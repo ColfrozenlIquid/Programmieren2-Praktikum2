@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #ifndef PRAKTIKUM2_FLOOR_H
 #define PRAKTIKUM2_FLOOR_H
 
@@ -21,6 +17,5 @@ class Floor : public Tile {
 
     private:
 };
-
 
 #endif //PRAKTIKUM2_FLOOR_H

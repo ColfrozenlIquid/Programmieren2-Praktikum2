@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #ifndef PRAKTIKUM2_DUNGEONCRAWLER_H
 #define PRAKTIKUM2_DUNGEONCRAWLER_H
 
@@ -26,6 +22,5 @@ class DungeonCrawler {
         AbstractUI* m_UI;
         Level* m_level;
 };
-
 
 #endif //PRAKTIKUM2_DUNGEONCRAWLER_H

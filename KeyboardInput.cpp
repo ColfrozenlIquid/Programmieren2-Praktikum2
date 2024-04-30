@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #include <string>
 #include <iostream>
 #include "KeyboardInput.h"

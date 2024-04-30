@@ -1,10 +1,5 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #ifndef PRAKTIKUM2_TILE_H
 #define PRAKTIKUM2_TILE_H
-
 
 #include <utility>
 #include <string>
@@ -43,6 +38,5 @@ class Tile {
 
     private:
 };
-
 
 #endif //PRAKTIKUM2_TILE_H

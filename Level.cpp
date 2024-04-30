@@ -1,7 +1,3 @@
-//
-// Created by Daniel on 17/04/2024.
-//
-
 #include <iostream>
 #include "Level.h"
 #include "Wall.h"
