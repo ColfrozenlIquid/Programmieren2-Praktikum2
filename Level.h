@@ -26,6 +26,9 @@ class Level {
         std::vector<std::vector<Tile*>> getMapData();
         std::vector<Character*> getCharacters();
 
+        int getMaxRows();
+        int getMaxColumns();
+
     private:
         void generateLevel(std::string level_string);
         void placeCharacter(Character* character, int row, int column);

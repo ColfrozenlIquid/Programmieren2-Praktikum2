@@ -87,8 +87,10 @@ const Tile* Level::getTile(int row, int column) const {
 
 void Level::placeCharacter(Character* character, int row, int column) {
     character->setCurrentTile(m_level_data[row][column]);
+    character->setPositionCoordinate(row, column);
     m_level_data[row][column]->setCurrentCharacter(character);
     m_character_vec.push_back(character);
+
 }
 
 std::vector<std::vector<Tile*>> Level::getMapData() {
@@ -97,4 +99,12 @@ std::vector<std::vector<Tile*>> Level::getMapData() {
 
 std::vector<Character*> Level::getCharacters() {
     return m_character_vec;
+}
+
+int Level::getMaxRows() {
+    return m_rows;
+}
+
+int Level::getMaxColumns() {
+    return m_columns;
 }
