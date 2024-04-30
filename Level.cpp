@@ -12,6 +12,7 @@ Level::Level(std::string level, int rows, int columns, AbstractUI* ui) : m_rows(
     generateLevel(level);
     Character* player_character = new Character("player_texture", ui);
     placeCharacter(player_character, 3, 3);
+    connectPortals();
 }
 
 Level::~Level() {}
@@ -39,9 +40,32 @@ void Level::generateLevel(std::string level) {
 }
 
 void Level::connectPortals() {
+    int count = 0;
+    std::pair<Tile*, Tile*> portals_pair = {nullptr, nullptr};
     for (auto row : m_level_data) {
-        for (auto tile : row)
+        for (auto tile : row) {
+            if (typeid(*tile) == typeid(Portal)) {
+                std::cout << "Found portal" << std::endl;
+                if (count + 1 > 2) {
+                    std::cout << "too many portals, reimplement method" << std::endl;
+                    return;
+                }
+                if (!portals_pair.first) {
+                    portals_pair.first = tile;
+                    count++;
+                    continue;
+                }
+                if (!portals_pair.second) {
+                    portals_pair.second = tile;
+                    count++;
+                    break;
+                }
+            }
+        }
     }
+    std::cout << "Portals pair #1: " << portals_pair.first << ", #2: " << portals_pair.second << std::endl;
+    dynamic_cast<Portal*>(portals_pair.first)->setDestinationPortal(dynamic_cast<Portal*>(portals_pair.second));
+    dynamic_cast<Portal*>(portals_pair.second)->setDestinationPortal(dynamic_cast<Portal*>(portals_pair.first));
 }
 
 void Level::printLevelToConsole() {

@@ -35,3 +35,7 @@ std::pair<bool, Tile*> Portal::onEnter(Character* who) {
     std::pair<bool, Tile*> result = {true, m_destination_portal};
     return result;
 }
+
+void Portal::setDestinationPortal(Tile* tile) {
+    m_destination_portal = dynamic_cast<Portal*>(tile);
+}

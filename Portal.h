@@ -19,6 +19,8 @@ class Portal : public Tile {
         bool onLeave(Tile* destTile, Character* who);
         std::pair<bool, Tile*> onEnter(Character* who);
 
+        void setDestinationPortal(Tile* tile);
+
     private:
         Portal* m_destination_portal;
 };

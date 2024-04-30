@@ -19,3 +19,7 @@ void Character::setCurrentTile(Tile* tile) {
 INPUT Character::move() {
     return m_abstractui->move();
 }
+
+Tile* Character::getCurrentPosition() {
+    return m_current_tile_position;
+}

@@ -21,6 +21,7 @@ class Character {
 
         std::string getTexture();
         void setCurrentTile(Tile* tile);
+        Tile* getCurrentPosition();
         INPUT move();
 
     private:
