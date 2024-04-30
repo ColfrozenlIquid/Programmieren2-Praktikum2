@@ -1,7 +1,4 @@
-#ifndef PRAKTIKUM2_FLOOR_H
-#define PRAKTIKUM2_FLOOR_H
-
-
+#pragma once
 #include "Tile.h"
 
 class Floor : public Tile {
@@ -17,5 +14,3 @@ class Floor : public Tile {
 
     private:
 };
-
-#endif //PRAKTIKUM2_FLOOR_H

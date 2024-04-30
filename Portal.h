@@ -1,7 +1,4 @@
-#ifndef PRAKTIKUM2_PORTAL_H
-#define PRAKTIKUM2_PORTAL_H
-
-
+#pragma once
 #include "Tile.h"
 
 class Portal : public Tile {
@@ -20,5 +17,3 @@ class Portal : public Tile {
     private:
         Portal* m_destination_portal;
 };
-
-#endif //PRAKTIKUM2_PORTAL_H

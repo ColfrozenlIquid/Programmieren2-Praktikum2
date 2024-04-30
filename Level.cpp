@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Level.h"
 #include "Wall.h"
 #include "Floor.h"
@@ -59,7 +58,7 @@ void Level::connectPortals() {
             }
         }
     }
-    std::cout << "Portals pair #1: " << portals_pair.first << ", #2: " << portals_pair.second << std::endl;
+
     dynamic_cast<Portal*>(portals_pair.first)->setDestinationPortal(dynamic_cast<Portal*>(portals_pair.second));
     dynamic_cast<Portal*>(portals_pair.second)->setDestinationPortal(dynamic_cast<Portal*>(portals_pair.first));
 }

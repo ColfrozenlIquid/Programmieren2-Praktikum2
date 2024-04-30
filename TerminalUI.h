@@ -1,7 +1,4 @@
-#ifndef PRAKTIKUM2_TERMINALUI_H
-#define PRAKTIKUM2_TERMINALUI_H
-
-
+#pragma once
 #include "AbstractUI.h"
 #include "InputType.h"
 
@@ -15,5 +12,3 @@ class TerminalUI : public AbstractUI {
 
     private:
 };
-
-#endif //PRAKTIKUM2_TERMINALUI_H

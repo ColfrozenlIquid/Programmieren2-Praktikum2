@@ -1,5 +1,4 @@
 #include "Wall.h"
-#include <iostream>
 
 Wall::Wall(int row, int column) : Tile(row, column) {
     m_texture = "#";

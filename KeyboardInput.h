@@ -1,7 +1,7 @@
-#ifndef PRAKTIKUM2_KEYBOARDINPUT_H
-#define PRAKTIKUM2_KEYBOARDINPUT_H
-
+#pragma once
+#include <iostream>
 #include "InputType.h"
+
 
 class KeyboardInput {
     public:
@@ -12,5 +12,3 @@ class KeyboardInput {
 
     private:
 };
-
-#endif //PRAKTIKUM2_KEYBOARDINPUT_H

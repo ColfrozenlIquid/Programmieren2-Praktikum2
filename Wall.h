@@ -1,7 +1,4 @@
-#ifndef PRAKTIKUM2_WALL_H
-#define PRAKTIKUM2_WALL_H
-
-
+#pragma once
 #include "Tile.h"
 
 class Wall : public Tile {
@@ -17,5 +14,3 @@ class Wall : public Tile {
 
     private:
 };
-
-#endif //PRAKTIKUM2_WALL_H

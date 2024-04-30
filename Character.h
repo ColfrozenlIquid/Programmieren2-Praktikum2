@@ -1,7 +1,4 @@
-#ifndef PRAKTIKUM2_CHARACTER_H
-#define PRAKTIKUM2_CHARACTER_H
-
-
+#pragma once
 #include <string>
 #include "Tile.h"
 #include "AbstractUI.h"
@@ -35,5 +32,3 @@ class Character {
         Coordinate m_current_player_coord;
         AbstractUI* m_abstractui;
 };
-
-#endif //PRAKTIKUM2_CHARACTER_H

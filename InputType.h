@@ -1,5 +1,4 @@
-#ifndef PRAKTIKUM2_INPUTTYPE_H
-#define PRAKTIKUM2_INPUTTYPE_H
+#pragma once
 
 enum class INPUT {
     UP,
@@ -9,5 +8,3 @@ enum class INPUT {
     QUIT,
     NONE,
 };
-
-#endif //PRAKTIKUM2_INPUTTYPE_H

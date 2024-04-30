@@ -1,9 +1,6 @@
-#ifndef PRAKTIKUM2_TILE_H
-#define PRAKTIKUM2_TILE_H
-
+#pragma once
 #include <utility>
 #include <string>
-#include <iostream>
 #include "Character.h"
 
 class Character;
@@ -38,5 +35,3 @@ class Tile {
 
     private:
 };
-
-#endif //PRAKTIKUM2_TILE_H

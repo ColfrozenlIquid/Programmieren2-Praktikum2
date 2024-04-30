@@ -1,7 +1,4 @@
-#ifndef PRAKTIKUM2_LEVEL_H
-#define PRAKTIKUM2_LEVEL_H
-
-
+#pragma once
 #include <string>
 #include <vector>
 #include "Tile.h"
@@ -35,5 +32,3 @@ class Level {
         const int m_rows;
         const int m_columns;
 };
-
-#endif //PRAKTIKUM2_LEVEL_H
