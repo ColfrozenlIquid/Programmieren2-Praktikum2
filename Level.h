@@ -29,6 +29,7 @@ class Level {
     private:
         void generateLevel(std::string level_string);
         void placeCharacter(Character* character, int row, int column);
+        void connectPortals();
 
         std::vector<std::vector<Tile*>> m_level_data;
         std::vector<Character*> m_character_vec;

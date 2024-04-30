@@ -38,6 +38,12 @@ void Level::generateLevel(std::string level) {
     }
 }
 
+void Level::connectPortals() {
+    for (auto row : m_level_data) {
+        for (auto tile : row)
+    }
+}
+
 void Level::printLevelToConsole() {
     for (auto i : m_level_data) {
         for (auto j : i) {
