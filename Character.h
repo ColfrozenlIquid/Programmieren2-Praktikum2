@@ -4,11 +4,6 @@
 #include "AbstractUI.h"
 #include "KeyboardInput.h"
 
-typedef struct Coordinate {
-    int row_pos;
-    int column_pos;
-} Coordinate;
-
 class Tile;
 class AbstractUI;
 
@@ -20,15 +15,13 @@ class Character {
 
         std::string getTexture();
         void setCurrentTile(Tile* tile);
-        Coordinate getCurrentCoordinate();
-        INPUT move();
 
-        void setPositionCoordinate(int row_pos, int column_pos);
+        INPUT move();
+        
         Tile* getCurrentCharacterTile();
 
     private:
         std::string m_texture_path;
         Tile* m_current_tile_position;
-        Coordinate m_current_player_coord;
         AbstractUI* m_abstractui;
 };

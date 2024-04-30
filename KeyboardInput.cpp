@@ -8,6 +8,7 @@ INPUT KeyboardInput::getKeyboardInput() {
     std::string input;
     std::cout << "> ";
     std::cin >> input;
+
     if (input[0] == 'w' || input[0] == 'W') {
         return INPUT::UP;
     }
@@ -24,5 +25,6 @@ INPUT KeyboardInput::getKeyboardInput() {
         return INPUT::QUIT;
     }
     std::cout << "Invalid input" << std::endl;
+    
     return INPUT::NONE;
 }

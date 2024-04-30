@@ -7,6 +7,8 @@ class Character;
 
 class Tile {
     public:
+         ~Tile();
+
         const signed int getColumns();
         const signed int getRows();
 
@@ -24,9 +26,7 @@ class Tile {
         int getColumn();
 
     protected:
-
         Tile(int row, int column);
-        ~Tile();
 
         std::string m_texture;
         Character* m_current_character;

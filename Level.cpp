@@ -10,7 +10,13 @@ Level::Level(std::string level, int rows, int columns, AbstractUI* ui) : m_rows(
     connectPortals();
 }
 
-Level::~Level() {}
+Level::~Level() {
+    for (auto vec : m_level_data) {
+        for (auto tile : vec) {
+            delete tile;
+        }
+    }
+}
 
 void Level::generateLevel(std::string level) {
     std::vector<Tile*> row_vector;
@@ -82,7 +88,6 @@ const Tile* Level::getTile(int row, int column) const {
 
 void Level::placeCharacter(Character* character, int row, int column) {
     character->setCurrentTile(m_level_data[row][column]);
-    character->setPositionCoordinate(row, column);
     m_level_data[row][column]->setCurrentCharacter(character);
     m_character_vec.push_back(character);
 
