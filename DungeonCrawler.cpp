@@ -20,16 +20,20 @@ bool DungeonCrawler::turn() {
         if (player_input == INPUT::QUIT) {
             return false;
         }
-        Coordinate current_character_position = character->getCurrentCoordinate();
         Tile* current_character_tile = character->getCurrentCharacterTile();
-        std::pair<Tile*, Coordinate> destination_tile = getDestinationTile(player_input, current_character_position);
-        bool result = current_character_tile->moveTo(destination_tile.first, character);
-        std::cout << "Result is: " << result << std::endl;
-        if (result) {
-            std::cout << "Moving player" << std::endl;
-            character->setCurrentTile(destination_tile.first);
-            character->setPositionCoordinate(destination_tile.second.row_pos, destination_tile.second.column_pos);
-        }
+        Tile* destination_character_tile = getDestinationTile(player_input, current_character_tile);
+
+
+        // Coordinate current_character_position = character->getCurrentCoordinate();
+        // Tile* current_character_tile = character->getCurrentCharacterTile();
+        // std::pair<Tile*, Coordinate> destination_tile = getDestinationTile(player_input, current_character_position);
+        bool result = current_character_tile->moveTo(destination_character_tile, character);
+        // std::cout << "Result is: " << result << std::endl;
+        // if (result) {
+        //     std::cout << "Moving player" << std::endl;
+        //     character->setCurrentTile(destination_character_tile);
+        //     character->setPositionCoordinate(destination_tile.second.row_pos, destination_tile.second.column_pos);
+        // }
     }
     // KeyboardInput::getKeyboardInput();
     // INPUT player_input = m_UI->move();
@@ -37,36 +41,41 @@ bool DungeonCrawler::turn() {
     return true;
 }
 
-std::pair<Tile*, Coordinate> DungeonCrawler::getDestinationTile(INPUT player_input, Coordinate current_character_position) {
-    std::cout << "Current character position: (" << current_character_position.column_pos << ", " << current_character_position.row_pos << ")" << std::endl;
-    Coordinate destination_coordinate = current_character_position;
+Tile* DungeonCrawler::getDestinationTile(INPUT player_input, Tile* current_tile) {
+    int current_row = current_tile->getRow();
+    int current_column = current_tile->getColumn();
+    int destination_row = current_row;
+    int destination_column = current_column;
+
+    std::cout << "current coord (" << current_column << ", " << current_row << ")" << std::endl;
+
     switch (player_input) {
-    case INPUT::UP :
-        destination_coordinate.column_pos = current_character_position.column_pos;
-        if ((current_character_position.row_pos - 1) >= 0) {
-            destination_coordinate.row_pos -= 1;
-        }
-        break;
-    case INPUT::DOWN :
-        destination_coordinate.column_pos = current_character_position.column_pos;
-        if ((current_character_position.row_pos + 1) < m_level->getMaxRows()) {
-            destination_coordinate.row_pos += 1;
-        }
-        break;
-    case INPUT::LEFT :
-        destination_coordinate.row_pos = current_character_position.row_pos;
-        if ((current_character_position.column_pos - 1) >= 0) {
-            destination_coordinate.column_pos -= 1;
-        }
-        break;
-    case INPUT::RIGHT :
-        destination_coordinate.row_pos = current_character_position.row_pos;
-        if ((current_character_position.column_pos + 1) < m_level->getMaxColumns()) {
-            destination_coordinate.column_pos += 1;
-        }
-    default:
-        break;
+        case INPUT::UP :
+            destination_column = current_column;
+            if ((current_row - 1) >= 0) {
+                destination_row -= 1;
+            }
+            break;
+        case INPUT::DOWN :
+            destination_column = current_column;
+            if ((current_row + 1) < m_level->getMaxRows()) {
+                destination_row += 1;
+            }
+            break;
+        case INPUT::LEFT :
+            destination_row = current_row;
+            if ((current_column - 1) >= 0) {
+                destination_column -= 1;
+            }
+            break;
+        case INPUT::RIGHT :
+            destination_row = current_row;
+            if ((current_column + 1) < m_level->getMaxColumns()) {
+                destination_column += 1;
+            }
+        default:
+            break;
     }
-    std::cout << "Destination character position: (" << destination_coordinate.column_pos << ", " << destination_coordinate.row_pos << ")" << std::endl;
-    return {m_level->getTile(destination_coordinate.row_pos, destination_coordinate.column_pos), destination_coordinate};
+    std::cout << "Destination coord (" << destination_column << ", " << destination_row << ")" << std::endl;
+    return m_level->getTile(destination_row, destination_column);
 }

@@ -37,22 +37,32 @@ Character* Tile::getCharacter() {
 }
 
 bool Tile::moveTo(Tile* destTile, Character* who) {
-    std::cout << "Caling moveto on Tile" << std::endl;
+    std::cout << "Calling moveto on Tile" << std::endl;
     if (onLeave(destTile, who)) {
         std::pair<bool, Tile*> entry_tile = destTile->onEnter(who);
         if (entry_tile.first) {
             if (entry_tile.second) {
                 entry_tile.second->setCurrentCharacter(who);
                 this->setCurrentCharacter(nullptr);
+                who->setCurrentTile(entry_tile.second);
             }
             else {
                 destTile->setCurrentCharacter(who);
                 this->setCurrentCharacter(nullptr);
+                who->setCurrentTile(destTile);
             }
             return true;
         }
     }
     return false;
+}
+
+int Tile::getRow() {
+    return m_row;
+}
+
+int Tile::getColumn() {
+    return m_column;
 }
 
 // bool Tile::moveTo(Tile* destTile, Character* who) {

@@ -28,6 +28,9 @@ class Tile {
         bool hasCharacter();
         Character* getCharacter();
 
+        int getRow();
+        int getColumn();
+
     protected:
 
         Tile(int row, int column);

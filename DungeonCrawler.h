@@ -21,7 +21,7 @@ class DungeonCrawler {
 
 
     private:
-        std::pair<Tile*, Coordinate> getDestinationTile(INPUT player_input, Coordinate current_character_position);
+        Tile* getDestinationTile(INPUT player_input, Tile* current_tile);
 
         AbstractUI* m_UI;
         Level* m_level;
