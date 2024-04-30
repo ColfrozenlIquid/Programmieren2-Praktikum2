@@ -31,6 +31,7 @@ class Character {
         INPUT move();
 
         void setPositionCoordinate(int row_pos, int column_pos);
+        Tile* getCurrentCharacterTile();
 
     private:
         std::string m_texture_path;

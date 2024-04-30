@@ -8,6 +8,7 @@
 
 #include <utility>
 #include <string>
+#include <iostream>
 #include "Character.h"
 
 class Character;
@@ -20,7 +21,7 @@ class Tile {
         void setCurrentCharacter(Character* character);
         virtual std::string getTexture() = 0;
 
-        virtual bool moveTo(Tile* destTile, Character* who) = 0;
+        virtual bool moveTo(Tile* destTile, Character* who);
         virtual bool onLeave(Tile* destTile, Character* who) = 0;
         virtual std::pair<bool, Tile*> onEnter(Character* who) = 0;
 

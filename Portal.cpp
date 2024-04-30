@@ -17,15 +17,15 @@ std::string Portal::getTexture() {
     return m_texture;
 }
 
-bool Portal::moveTo(Tile* destTile, Character* who) {
-    if (onLeave(destTile, who)) {
-        if (destTile->onEnter(who).first) {
-            this->m_destination_portal->setCurrentCharacter(who);
-            this->setCurrentCharacter(nullptr);
-        }
-    }
-    return true;
-}
+// bool Portal::moveTo(Tile* destTile, Character* who) {
+//     if (onLeave(destTile, who)) {
+//         if (destTile->onEnter(who).first) {
+//             this->m_destination_portal->setCurrentCharacter(who);
+//             this->setCurrentCharacter(nullptr);
+//         }
+//     }
+//     return true;
+// }
 
 bool Portal::onLeave(Tile* destTile, Character* who) {
     return true;

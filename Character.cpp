@@ -28,3 +28,7 @@ void Character::setPositionCoordinate(int row_pos, int column_pos) {
     m_current_player_coord.row_pos = row_pos;
     m_current_player_coord.column_pos = column_pos;
 }
+
+Tile* Character::getCurrentCharacterTile() {
+    return m_current_tile_position;
+}

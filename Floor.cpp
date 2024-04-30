@@ -17,15 +17,15 @@ std::string Floor::getTexture() {
     return m_texture;
 }
 
-bool Floor::moveTo(Tile* destTile, Character* who) {
-    if (onLeave(destTile, who)) {
-        if (destTile->onEnter(who).first) {
-            destTile->setCurrentCharacter(who);
-            this->setCurrentCharacter(nullptr);
-        }
-    }
-    return true;
-}
+// bool Floor::moveTo(Tile* destTile, Character* who) {
+//     if (onLeave(destTile, who)) {
+//         if (destTile->onEnter(who).first) {
+//             destTile->setCurrentCharacter(who);
+//             this->setCurrentCharacter(nullptr);
+//         }
+//     }
+//     return true;
+// }
 
 bool Floor::onLeave(Tile* destTile, Character* who) {
     return true;
