@@ -2,9 +2,6 @@
 
 int main() {
     DungeonCrawler dungeonCrawler;
-    bool running = true;
-    while (running) {
-        running = dungeonCrawler.turn();
-    }
+    while (dungeonCrawler.turn());
     return 0;
 }
