@@ -16,6 +16,9 @@ bool DungeonCrawler::turn() {
         if (player_input == INPUT::QUIT) {
             return false;
         }
+        if (player_input == INPUT::NONE) {
+            continue;
+        }
         Tile* current_character_tile = character->getCurrentCharacterTile();
         Tile* destination_character_tile = getDestinationTile(player_input, current_character_tile);
         current_character_tile->moveTo(destination_character_tile, character);

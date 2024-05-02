@@ -19,6 +19,9 @@ const signed int Tile::getRows() {
 
 void Tile::setCurrentCharacter(Character* character) {
     this->m_current_character = character;
+    if (character){
+        character->setCurrentTile(this);
+    }
 }
 
 bool Tile::hasCharacter() {
@@ -33,19 +36,18 @@ Character* Tile::getCharacter() {
 }
 
 bool Tile::moveTo(Tile* destTile, Character* who) {
-    std::cout << "Calling moveto on Tile" << std::endl;
+    //is character allowed to leave current tile
     if (onLeave(destTile, who)) {
         std::pair<bool, Tile*> entry_tile = destTile->onEnter(who);
         if (entry_tile.first) {
+            //check for portal condition
             if (entry_tile.second) {
                 entry_tile.second->setCurrentCharacter(who);
                 this->setCurrentCharacter(nullptr);
-                who->setCurrentTile(entry_tile.second);
             }
             else {
                 destTile->setCurrentCharacter(who);
                 this->setCurrentCharacter(nullptr);
-                who->setCurrentTile(destTile);
             }
             return true;
         }

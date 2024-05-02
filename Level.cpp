@@ -42,7 +42,7 @@ void Level::generateLevel(std::string level) {
 
 void Level::connectPortals() {
     int count = 0;
-    std::pair<Tile*, Tile*> portals_pair = {nullptr, nullptr};
+    std::pair<Portal*, Portal*> portals_pair = {nullptr, nullptr};
     for (auto row : m_level_data) {
         for (auto tile : row) {
             if (typeid(*tile) == typeid(Portal)) {
@@ -52,12 +52,12 @@ void Level::connectPortals() {
                     return;
                 }
                 if (!portals_pair.first) {
-                    portals_pair.first = tile;
+                    portals_pair.first = dynamic_cast<Portal*>(tile);
                     count++;
                     continue;
                 }
                 if (!portals_pair.second) {
-                    portals_pair.second = tile;
+                    portals_pair.second = dynamic_cast<Portal*>(tile);
                     count++;
                     break;
                 }
@@ -65,8 +65,8 @@ void Level::connectPortals() {
         }
     }
 
-    dynamic_cast<Portal*>(portals_pair.first)->setDestinationPortal(dynamic_cast<Portal*>(portals_pair.second));
-    dynamic_cast<Portal*>(portals_pair.second)->setDestinationPortal(dynamic_cast<Portal*>(portals_pair.first));
+    portals_pair.first->setDestinationPortal(portals_pair.second);
+    portals_pair.second->setDestinationPortal(portals_pair.first);
 }
 
 void Level::printLevelToConsole() {
@@ -87,7 +87,7 @@ const Tile* Level::getTile(int row, int column) const {
 }
 
 void Level::placeCharacter(Character* character, int row, int column) {
-    character->setCurrentTile(m_level_data[row][column]);
+    // character->setCurrentTile(m_level_data[row][column]);
     m_level_data[row][column]->setCurrentCharacter(character);
     m_character_vec.push_back(character);
 

@@ -7,24 +7,21 @@ KeyboardInput::~KeyboardInput() {}
 INPUT KeyboardInput::getKeyboardInput() {
     std::string input;
     std::cout << "> ";
-    std::cin >> input;
+    std::getline(std::cin, input);
 
-    if (input[0] == 'w' || input[0] == 'W') {
-        return INPUT::UP;
+    switch (input[0]) {
+        case 'w': case 'W' :
+            return INPUT::UP;
+        case 's' : case 'S' :
+            return INPUT::DOWN;
+        case 'a' : case 'A' : 
+            return INPUT::LEFT;
+        case 'd' : case 'D' :
+            return INPUT::RIGHT;
+        case 'q' : case 'Q' :
+            return INPUT::QUIT;
+        default :
+            std::cerr << "Invalid input" << std::endl;
+            return INPUT::NONE;
     }
-    if (input[0] == 's' || input[0] == 'S') {
-        return INPUT::DOWN;
-    }
-    if (input[0] == 'a' || input[0] == 'A') {
-        return INPUT::LEFT;
-    }
-    if (input[0] == 'd' || input[0] == 'D') {
-        return INPUT::RIGHT;
-    }
-    if (input[0] == 'q' || input[0] == 'Q') {
-        return INPUT::QUIT;
-    }
-    std::cout << "Invalid input" << std::endl;
-    
-    return INPUT::NONE;
 }
